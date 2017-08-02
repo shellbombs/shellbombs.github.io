@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+windows and linux kernel development, excellent in kernel driver and debugging, familiar with binary reverse, vulnerability and malware analysis.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[xyz.sun.on@163.com](mailto:email@domain.com)
