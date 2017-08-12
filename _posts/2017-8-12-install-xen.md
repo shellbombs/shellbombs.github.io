@@ -8,17 +8,17 @@ Most of us may have used virtualbox and vmware, they have friendly UI and are ea
 --------------------------------------------------------------
 
 *Content*    
-1. Host OS preparation.  
-&nbsp;&nbsp;&nbsp;&nbsp;1.1 Install xen hypervisor.  
-&nbsp;&nbsp;&nbsp;&nbsp;1.2 Install xen tools.  
-&nbsp;&nbsp;&nbsp;&nbsp;1.3 Configuration network for guest OS.  
-2. Guest OS installation.  
-3. Optimize.  
+[1. Host OS preparation](#1)
+[1.1 Install xen hypervisor](#1.1)
+[1.2 Install xen tools](#1.2)
+[1.3 Configuration network for guest OS](#1.3)
+[2. Guest OS installation](#2)  
+[3. Optimize](#3)
 
 ---------------------------------------------------------------
 
-### 1. Host OS preparation
-**1.1 Install xen hypervisor**  
+<h2 id="1">1. Host OS preparation</h2>
+<h6 id="1.1">1.1 Install xen hypervisor</h6> 
 
 to install xen hypervisor, all you need to do is:  
 ```
@@ -26,7 +26,7 @@ apt-get install xen-linux-system-amd64
 ```
 after you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
 
-**1.2 Install xen tools**  
+<h6 id="1.2">1.2 Install xen tools</h6>
 
 xen has many toolstack which can be used to manage VMs. xl is the default tools. to install xl-tools. type:  
 ```
@@ -38,7 +38,7 @@ xl top
 ```
 it will show the dom0 status.  
 
-**1.3 Configuration network for guest OS**  
+<h6 id="1.3">1.3 Configuration network for guest OS</h6>
 
 now we have installed xen hypervisor and xen-tools. the next step is to configure the network for guest OS. unlike virtualbox or vmware, they can create virtual ethernet automatically for us, we need create it manually.
 first we need to install bridge utilities.  
@@ -67,7 +67,7 @@ check to make sure it worked:
 brctl show
 ```
 
-### 2. Guest OS installnation
+<h2 id="2">2. Guest OS installnation</h2>
 
 to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. sample *windows_7.cfg* content:  
 ```
@@ -102,7 +102,7 @@ gvncviewer <dom0-ip-address>
 ```
 now you can enjoy it, but i recommend you continue to read the next section.
 
-### 3. Optimize
+<h2 id="3">3. Optimize</h2>
 
 actually xen use intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it use qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
 
