@@ -22,7 +22,7 @@ to install xen hypervisor, all you need to do is:
 apt-get install xen-linux-system-amd64
 ```
 after you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
-**1.2 Install xen tools** 
+**1.2 Install xen tools**  
 xen has many toolstack which can be used to manage VMs. xl is the default tools. to install xl-tools. type:  
 ```
 apt-get install xen-tools
