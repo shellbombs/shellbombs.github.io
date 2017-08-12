@@ -24,32 +24,32 @@ Most of us may have used virtualbox or vmware, they have friendly UI and are eas
 
 <h6 id="1.1">1.1 Install xen hypervisor</h6> 
 
-to install xen hypervisor, all you need to do is:  
+To install xen hypervisor, all you need to do is:  
 ```
     apt-get install xen-linux-system-amd64
 ```
-after you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
+After you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
 
 <h6 id="1.2">1.2 Install xen tools</h6>
 
-xen has many toolstack which can be used to create and manage VMs. xl is the default tools. to install xl-tools. type:  
+Xen has many toolstack which can be used to create and manage VMs. xl is the default tools. to install xl-tools. type:  
 ```
     apt-get install xen-tools
 ```
-if you have already reboot in the previous step. now you can type:  
+If you have already reboot in the previous step. now you can type:  
 ```
     xl top
 ```
-it will show the dom0 status.  
+It will show the dom0 status.  
 
 <h6 id="1.3">1.3 Configuration network for guest OS</h6>
 
-now we have installed xen hypervisor and xen-tools. the next step is to configure the network for guest OS. unlike virtualbox or vmware, they can create virtual ethernet automatically for us, we need create it manually.
+Now we have installed xen hypervisor and xen-tools. the next step is to configure the network for guest OS. unlike virtualbox or vmware, they can create virtual ethernet automatically for us, we need create it manually.
 first we need to install bridge utilities.  
 ```
     apt-get install bridge-utils
 ```
-now we can specify network information through */etc/network/interfaces* file.  
+Now we can specify network information through */etc/network/interfaces* file.  
 ```
     auto lo
     iface lo inet loopback
@@ -61,12 +61,12 @@ now we can specify network information through */etc/network/interfaces* file.
     iface xenbr0 inet dhcp
     bridge_ports eth0
 ```
-above we create a virtual ethernet *xenbr0* and bridge it to *eth0*.
-now restart networking:  
+Above we create a virtual ethernet *xenbr0* and bridge it to *eth0*.
+Now restart networking:  
 ```
     ifdown -a && ifup -a
 ```
-check to make sure it worked:  
+Check to make sure it worked:  
 ```
     brctl show
 ```
@@ -75,7 +75,7 @@ check to make sure it worked:
 
 --------------------------------------------------------------------------------
 
-to install a xen guest, we need to create a config file that can describe the hardware information about the guest OS. a sample *windows_7.cfg*:    
+To install a xen guest, we need to create a config file that can describe the hardware information about the guest OS. a sample *windows_7.cfg*:    
 ```
     builder= 'hvm'
     memory = 2048
@@ -97,22 +97,22 @@ to install a xen guest, we need to create a config file that can describe the ha
     vncpasswd=""
     serial='pty'
 ```
-pay special attention to the *disk* line, we have two disks, the first one is a .img file used for windows system intallation. you need to create it manually first, size more than 20GB is recommended, the second one is a ISO file, that is the windows installation ISO image which you can download from internet.  
-now finnaly we can start the VM:  
+Pay special attention to the *disk* line, we have two disks, the first one is a .img file used for windows system intallation. you need to create it manually first, size more than 20GB is recommended, the second one is a ISO file, that is the windows installation ISO image which you can download from internet.  
+Now finnaly we can start the VM:  
 ```
     xl create windows_7.cfg
 ```
-after that, we can use vncviewer to connect to the guest OS and complete the OS installation.  
+After that, we can use vncviewer to connect to the guest OS and complete the OS installation.  
 ```
     gvncviewer <dom0-ip-address>
 ```
-now you can enjoy it, but i recommend you to read the next section.
+Now you can enjoy it, but i recommend you to read the next section.
 
 <h2 id="3">3. Optimize</h2>
 
 ---------------------------------------------------------------------------
 
-actually xen uses intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it uses qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
+Actually xen uses intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it uses qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
 
 **References:**
 
