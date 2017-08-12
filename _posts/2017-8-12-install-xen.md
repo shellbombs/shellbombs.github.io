@@ -21,8 +21,8 @@ to install xen hypervisor, all you need to do is:
 ```
 apt-get install xen-linux-system-amd64
 ```
-after you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.
-**1.2 Install xen tools**  
+after you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
+**1.2 Install xen tools** 
 xen has many toolstack which can be used to manage VMs. xl is the default tools. to install xl-tools. type:  
 ```
 apt-get install xen-tools
@@ -31,7 +31,7 @@ if you have already reboot in the previous step. now you can type:
 ```
 xl top
 ```
-it will show the dom0 status.
+it will show the dom0 status.  
 **1.3 Configuration network for guest OS**  
 now we have installed xen hypervisor and xen-tools. the next step is to configure the network for guest OS. unlike virtualbox or vmware, they can create virtual ethernet automatically for us, we need create it manually.
 first we need to install bridge utilities.  
