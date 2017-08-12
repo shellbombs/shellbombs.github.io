@@ -11,10 +11,9 @@ Most of us may have used virtualbox and vmware, they have friendly UI and are ea
 &nbsp;&nbsp;&nbsp;&nbsp;1.1 Install xen hypervisor.  
 &nbsp;&nbsp;&nbsp;&nbsp;1.2 Install xen tools.  
 &nbsp;&nbsp;&nbsp;&nbsp;1.3 Configuration network for guest OS.  
-
 2. Guest OS installation.
-
 3. Optimize.
+-------------------------------------------------------------------------
 
 ### 1. Host OS preparation
 #### 1.1 Install xen hypervisor
