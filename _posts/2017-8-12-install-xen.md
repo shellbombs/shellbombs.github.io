@@ -5,6 +5,7 @@ title: install xen-4.8 on debian9
 
 Most of us may have used virtualbox and vmware, they have friendly UI and are easily to use, they run under a host OS, just like a software. but xen is different, xen run directly on hardware, it is loaded by the bootloader before OS, then it loads the first special VM(dom0), dom0 has access to hardware, xen-tools are installed on dom0 used to communicate with xen hypervisor and manage other VMs, other VMs can't access the hardware directly. in this article, i will tell you how to install xen-4.8 on debian9 64bit, and install a windows guest OS.
 
+--------------------------------------------------------------
 *Content*    
 1. Host OS preparation.  
 &nbsp;&nbsp;&nbsp;&nbsp;1.1 Install xen hypervisor.  
@@ -12,8 +13,9 @@ Most of us may have used virtualbox and vmware, they have friendly UI and are ea
 &nbsp;&nbsp;&nbsp;&nbsp;1.3 Configuration network for guest OS.  
 2. Guest OS installation.  
 3. Optimize.  
+---------------------------------------------------------------
 
-### *1. Host OS preparation*
+### ==1. Host OS preparation==
 **1.1 Install xen hypervisor**  
 
 to install xen hypervisor, all you need to do is:  
@@ -63,7 +65,7 @@ check to make sure it worked:
 brctl show
 ```
 
-### *2. Guest OS installnation*
+### ==2. Guest OS installnation==
 
 to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. sample *windows_7.cfg* content:  
 ```
@@ -98,7 +100,7 @@ gvncviewer <dom0-ip-address>
 ```
 now you can enjoy it, but i recommend you continue to read the next section.
 
-### *3. Optimize*
+### ==3. Optimize==
 
 actually xen use intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it use qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
 
