@@ -17,7 +17,7 @@ Most of us may have used virtualbox and vmware, they have friendly UI and are ea
 
 ---------------------------------------------------------------
 
-### ==1. Host OS preparation==
+### 1. Host OS preparation
 **1.1 Install xen hypervisor**  
 
 to install xen hypervisor, all you need to do is:  
@@ -67,7 +67,7 @@ check to make sure it worked:
 brctl show
 ```
 
-### ==2. Guest OS installnation==
+### 2. Guest OS installnation
 
 to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. sample *windows_7.cfg* content:  
 ```
@@ -102,7 +102,7 @@ gvncviewer <dom0-ip-address>
 ```
 now you can enjoy it, but i recommend you continue to read the next section.
 
-### ==3. Optimize==
+### 3. Optimize
 
 actually xen use intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it use qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
 
