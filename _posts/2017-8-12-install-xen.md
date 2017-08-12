@@ -90,4 +90,4 @@ now you can enjoy it, but i recommend you continue to read the next section.
 actually xen use intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it use qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
 
 references:  
-[https://wiki.xenproject.org/wiki/Xen_Project_Beginners_Guide#Creating_a_Debian_PV_.28Paravirtualized.29_Guest](https://wiki.xenproject.org/wiki/Xen_Project_Beginners_Guide#Creating_a_Debian_PV_.28Paravirtualized.29_Guest)
+[https://wiki.xenproject.org/wiki/Xen_Project_Beginners_Guide](https://wiki.xenproject.org/wiki/Xen_Project_Beginners_Guide)
