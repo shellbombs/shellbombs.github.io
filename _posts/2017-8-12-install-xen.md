@@ -19,7 +19,8 @@ Most of us may have used virtualbox or vmware, they have friendly UI and are eas
 ---------------------------------------------------------------
 
 <h2 id="1">1. Host OS preparation</h2>
-_______________________________________________________________
+
+---------------------------------------------------------------
 
 <h6 id="1.1">1.1 Install xen hypervisor</h6> 
 
@@ -71,7 +72,8 @@ check to make sure it worked:
 ```
 
 <h2 id="2">2. Guest OS installnation</h2>
-_____________________________________________________________________
+
+--------------------------------------------------------------------------------
 
 to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. a sample *windows_7.cfg*:    
 ```
@@ -107,7 +109,8 @@ after that, we can use vncviewer to connect to the guest OS and complete the OS 
 now you can enjoy it, but i recommend you continue to read the next section.
 
 <h2 id="3">3. Optimize</h2>
-_______________________________________________________
+
+---------------------------------------------------------------------------
 
 actually xen uses intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it uses qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
 
