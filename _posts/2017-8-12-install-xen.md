@@ -29,7 +29,7 @@ after you install the xen hypervisor, the grub will automatically set xen hyperv
 
 <h6 id="1.2">1.2 Install xen tools</h6>
 
-xen has many toolstack which can be used to manage VMs. xl is the default tools. to install xl-tools. type:  
+xen has many toolstack which can be used to create and manage VMs. xl is the default tools. to install xl-tools. type:  
 ```
 apt-get install xen-tools
 ```
