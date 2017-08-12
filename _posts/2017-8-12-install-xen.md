@@ -3,7 +3,7 @@ layout: post
 title: install xen-4.8 on debian9
 ---
 
-Most of us may have used virtualbox or vmware, they have friendly UI and are easily to use, they run under a host OS, just like a software. but xen is different, xen run directly on hardware, it is loaded by the bootloader before OS, then it loads the first special VM(dom0), dom0 has access to hardware, xen-tools are installed on dom0 used to communicate with xen hypervisor and manage other VMs, other VMs can't access the hardware directly. in this article, i will tell you how to install xen-4.8 on debian9 64bit, and install a windows guest OS.
+Most of us may have used virtualbox or vmware, they have friendly UI and are easily to use, they run under a host OS, just like a normal software. but xen is different, xen run directly on hardware, it is loaded by the bootloader before OS, then it loads the first special VM(dom0), dom0 has access to hardware, xen-tools are installed on dom0 used to communicate with xen hypervisor and manage other VMs, other VMs can't access the hardware directly. in this article, i will tell you how to install xen-4.8 on debian9 64bit, and install a windows guest OS.
 
 **Content:**  
 
