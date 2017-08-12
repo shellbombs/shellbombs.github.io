@@ -75,7 +75,7 @@ check to make sure it worked:
 
 --------------------------------------------------------------------------------
 
-to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. a sample *windows_7.cfg*:    
+to install a xen guest, we need to create a config file that can describe the hardware information about the guest OS. a sample *windows_7.cfg*:    
 ```
     builder= 'hvm'
     memory = 2048
