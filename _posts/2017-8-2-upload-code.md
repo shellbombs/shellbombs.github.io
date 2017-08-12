@@ -1,6 +1,6 @@
 ---
 layout: post
-title: upload some code
+title: Upload some code
 ---
 
 Today i find some code which was written by me years ago in my harddisk, and i suddenly want to upload it to github, anyway, it's sort of a reminder of my past youth.

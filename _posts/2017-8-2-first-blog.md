@@ -1,6 +1,6 @@
 ---
 layout: post
-title: my first blog!
+title: My first blog!
 ---
 
 This is just a test for my first blog.
