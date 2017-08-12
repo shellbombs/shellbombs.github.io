@@ -61,7 +61,7 @@ now we can specify network information through */etc/network/interfaces* file.
     iface xenbr0 inet dhcp
     bridge_ports eth0
 ```
-above we create a virtual ethernet *xenbr0* and bridge it to eth0.
+above we create a virtual ethernet *xenbr0* and bridge it to *eth0*.
 now restart networking:  
 ```
     ifdown -a && ifup -a
