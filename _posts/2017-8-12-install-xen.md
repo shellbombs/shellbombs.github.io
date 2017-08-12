@@ -14,14 +14,17 @@ Most of us may have used virtualbox and vmware, they have friendly UI and are ea
 2. Guest OS installation.  
 3. Optimize.  
 
-### 1. Host OS preparation
+### *1. Host OS preparation*
 **1.1 Install xen hypervisor**  
+
 to install xen hypervisor, all you need to do is:  
 ```
 apt-get install xen-linux-system-amd64
 ```
 after you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
+
 **1.2 Install xen tools**  
+
 xen has many toolstack which can be used to manage VMs. xl is the default tools. to install xl-tools. type:  
 ```
 apt-get install xen-tools
@@ -31,14 +34,15 @@ if you have already reboot in the previous step. now you can type:
 xl top
 ```
 it will show the dom0 status.  
+
 **1.3 Configuration network for guest OS**  
+
 now we have installed xen hypervisor and xen-tools. the next step is to configure the network for guest OS. unlike virtualbox or vmware, they can create virtual ethernet automatically for us, we need create it manually.
 first we need to install bridge utilities.  
 ```
 apt-get install bridge-utils
 ```
 now we can specify network information through */etc/network/interfaces* file.  
-
 ```
 auto lo
 iface lo inet loopback
@@ -50,24 +54,19 @@ auto xenbr0
 iface xenbr0 inet dhcp
 bridge_ports eth0
 ```
-
 above we create a virtual ethernet *xenbr0* and bridge it to eth0.
-
 now restart networking:  
 ```
 ifdown -a && ifup -a
 ```
-
 check to make sure it worked:  
 ```
 brctl show
 ```
 
-### 2. Guest OS installnation
-to install a xen guest, we need create a config file that can describe the hardware information about the guest OS.
+### *2. Guest OS installnation*
 
-sample *windows_7.cfg* content:  
-
+to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. sample *windows_7.cfg* content:  
 ```
 builder= 'hvm'
 memory = 2048
@@ -89,8 +88,7 @@ vnclisten=""
 vncpasswd=""
 serial='pty'
 ```
-pay special attention to the *disk* line, we have two disks, the first one is a .img file used for window system intallation. you need create it manually first, recommend size is 20GB, the second one is a ISO file, that is the windows installation ISO image which you can download from internet.
-
+pay special attention to the *disk* line, we have two disks, the first one is a .img file used for window system intallation. you need create it manually first, recommend size is 20GB, the second one is a ISO file, that is the windows installation ISO image which you can download from internet.  
 now finnaly we can start the VM:  
 ```
 xl create windows_7.cfg
@@ -101,9 +99,10 @@ gvncviewer <dom0-ip-address>
 ```
 now you can enjoy it, but i recommend you continue to read the next section.
 
-### 3. Optimize
+### *3. Optimize*
+
 actually xen use intel VT-x and AMD-V to boost its cpu and memory virtualization. for device IO, it use qemu to emulate it, and it is very slow because it's emulated. to gain good performace, we can use PV drivers. after install the windows guest, we can download PV drivers [here](https://xenproject.org/developers/teams/windows-pv-drivers.html) and install it in the guest OS.
 
-References:  
+*References:*  
 
 [https://wiki.xenproject.org/wiki/Xen_Project_Beginners_Guide](https://wiki.xenproject.org/wiki/Xen_Project_Beginners_Guide)
