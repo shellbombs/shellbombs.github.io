@@ -106,7 +106,7 @@ after that, we can use vncviewer to connect to the guest OS and complete the OS 
 ```
     gvncviewer <dom0-ip-address>
 ```
-now you can enjoy it, but i recommend you continue to read the next section.
+now you can enjoy it, but i recommend you to read the next section.
 
 <h2 id="3">3. Optimize</h2>
 
