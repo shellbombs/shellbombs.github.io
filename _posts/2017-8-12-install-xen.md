@@ -70,7 +70,7 @@ brctl show
 
 <h2 id="2">2. Guest OS installnation</h2>
 
-to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. sample *windows_7.cfg* content:  
+to install a xen guest, we need create a config file that can describe the hardware information about the guest OS. a sample *windows_7.cfg*:    
 ```
 builder= 'hvm'
 memory = 2048
