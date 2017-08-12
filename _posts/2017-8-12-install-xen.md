@@ -90,7 +90,7 @@ vnclisten=""
 vncpasswd=""
 serial='pty'
 ```
-pay special attention to the *disk* line, we have two disk, the first one is a .img file used for window system intallation. you need create it manually first, recommend size is 20GB, the second one is a ISO file, that is the windows installation ISO image which you can download from internet.
+pay special attention to the *disk* line, we have two disks, the first one is a .img file used for window system intallation. you need create it manually first, recommend size is 20GB, the second one is a ISO file, that is the windows installation ISO image which you can download from internet.
 
 now finnaly we can start the VM:  
 ```
