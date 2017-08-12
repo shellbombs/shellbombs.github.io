@@ -23,7 +23,7 @@ Most of us may have used virtualbox or vmware, they have friendly UI and are eas
 
 to install xen hypervisor, all you need to do is:  
 ```
-apt-get install xen-linux-system-amd64
+&nbsp;&nbsp;&nbsp;&nbsp;apt-get install xen-linux-system-amd64
 ```
 after you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
 
