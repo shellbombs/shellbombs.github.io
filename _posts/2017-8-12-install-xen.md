@@ -9,9 +9,9 @@ Most of us may have used virtualbox and vmware, they have friendly UI and are ea
 
 *Content*    
 [1. Host OS preparation](#1)  
-[1.1 Install xen hypervisor](#1.1)  
-[1.2 Install xen tools](#1.2)  
-[1.3 Configuration network for guest OS](#1.3)  
+&nbsp;&nbsp;&nbsp;[1.1 Install xen hypervisor](#1.1)  
+&nbsp;&nbsp;&nbsp;[1.2 Install xen tools](#1.2)  
+&nbsp;&nbsp;&nbsp;[1.3 Configuration network for guest OS](#1.3)  
 [2. Guest OS installation](#2)    
 [3. Optimize](#3)  
 
