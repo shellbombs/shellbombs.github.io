@@ -3,7 +3,7 @@ layout: post
 title: install xen-4.8 on debian9
 ---
 
-Most of us may have used virtualbox and vmware, they have friendly UI and easily to use, they run under a host OS, just like a software. but xen is different, xen run directly on hardware, it is loaded by the bootloader before OS, then it loads the first special VM(domain0), domain0 has access to hardware, xen-tools are installed on domain0 used to communicate with xen hypervisor and manage other VMs, other VMs can't access the hardware directly. in this article, i will tell you how to install xen-4.8 on debian9 64bit, and install a windows guest OS.
+Most of us may have used virtualbox and vmware, they have friendly UI and are easily to use, they run under a host OS, just like a software. but xen is different, xen run directly on hardware, it is loaded by the bootloader before OS, then it loads the first special VM(dom0), dom0 has access to hardware, xen-tools are installed on dom0 used to communicate with xen hypervisor and manage other VMs, other VMs can't access the hardware directly. in this article, i will tell you how to install xen-4.8 on debian9 64bit, and install a windows guest OS.
 
 ### Content
 1. Host OS preparation.
@@ -25,7 +25,7 @@ xen has many toolstack which can be used to manage VMs. xl is the default tools.
 ```apt-get install xen-tools```
 if you have already reboot in the previous step. now you can type:
 ```xl top```
-it will show the domain0 status.
+it will show the dom0 status.
 #### 1.3 Configuration network for guest OS 
 now we have installed xen hypervisor and xen-tools. the next step is to configure the network for guest OS. unlike virtualbox or vmware, they can create virtual ethernet automatically for us, we need create it manually.
 first we need to install bridge utilities.
@@ -82,7 +82,7 @@ pay special attention to the *disk* line, we have two disk, the first one is a .
 now finnaly we can start the VM:
 ```xl create windows_7.cfg```
 after that, we can use vncviewer to connect to the guest OS and complete the OS installation.
-```gvncviewer <domain0-ip-address>```
+```gvncviewer <dom0-ip-address>```
 now you can enjoy it, but i recommend you continue to read the next section.
 
 ### 3. Optimize
