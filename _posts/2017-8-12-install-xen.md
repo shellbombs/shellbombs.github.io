@@ -18,17 +18,19 @@ Most of us may have used virtualbox or vmware, they have friendly UI and are eas
 
 ---------------------------------------------------------------
 
-<h2 id="1">1. Host OS preparation</h2>
+<h2 id="1">Host OS preparation</h2>
 
 ---------------------------------------------------------------
 
-<h6 id="1.1">1.1 Install xen hypervisor</h6> 
+<h6 id="1.1">Install xen hypervisor</h6> 
 
 To install xen hypervisor, all you need to do is:  
->apt-get install xen-linux-system-amd64  
+```
+    apt-get install xen-linux-system-amd64
+```
 After you install the xen hypervisor, the grub will automatically set xen hypervisor as default boot item. now you can reboot.  
 
-<h6 id="1.2">1.2 Install xen tools</h6>
+<h6 id="1.2">Install xen tools</h6>
 
 Xen has many toolstack which can be used to create and manage VMs. xl is the default tools. to install xl-tools. type:  
 ```
@@ -40,7 +42,7 @@ If you have already reboot in the previous step. now you can type:
 ```
 It will show the dom0 status.  
 
-<h6 id="1.3">1.3 Configuration network for guest OS</h6>
+<h6 id="1.3">Configuration network for guest OS</h6>
 
 Now we have installed xen hypervisor and xen-tools. the next step is to configure the network for guest OS. unlike virtualbox or vmware, they can create virtual ethernet automatically for us, we need create it manually.
 first we need to install bridge utilities.  
@@ -69,7 +71,7 @@ Check to make sure it worked:
     brctl show
 ```
 
-<h2 id="2">2. Guest OS installnation</h2>
+<h2 id="2">Guest OS installnation</h2>
 
 --------------------------------------------------------------------------------
 
@@ -106,7 +108,7 @@ After that, we can use vncviewer to connect to the guest OS and complete the OS 
 ```
 Now you can enjoy it, but i recommend you to read the next section.
 
-<h2 id="3">3. Optimize</h2>
+<h2 id="3">Optimize</h2>
 
 ---------------------------------------------------------------------------
 
