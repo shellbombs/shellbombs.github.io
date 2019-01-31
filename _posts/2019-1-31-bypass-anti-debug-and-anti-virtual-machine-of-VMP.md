@@ -28,7 +28,7 @@ Set a hardware breakpoint on the kernel32!LocalAlloc, then go.
 3. Search the **FLAG**
 
 ```
-s @esp L1000 *sample_image_default_load_base_address* *sample_image_current_load_base_address*
+s @esp L1000 sample_image_default_load_base_address sample_image_current_load_base_address
 ```
 
 Search the **FLAG** variable from the top of the stack, within a range of 0x1000 bytes, for example, default image base is 0x400000, and current image load base is 0xd60000, you should type as follows:
