@@ -9,7 +9,7 @@ VMP has used a lot of anti debug and anti virtual machine techniques which makes
 
 # Details
 
-- 1. Use windbg to load the VMP sample
+- Use windbg to load the VMP sample
 
 ```
 g $exentry
@@ -17,7 +17,7 @@ g $exentry
 
 After opened the VMP sample, use this command to reach the entry point of the sample.
 
-- 2. Break on kernel32!LocalAlloc
+- Break on kernel32!LocalAlloc
 
 ```
 ba e1 kernel32!LocalAlloc; g;
@@ -25,7 +25,7 @@ ba e1 kernel32!LocalAlloc; g;
 
 Set a hardware breakpoint on the kernel32!LocalAlloc, then go.
 
-- 3. Search the **FLAG**
+- Search the **FLAG**
 
 ```
 s @esp L1000 sample_image_default_load_base_address sample_image_current_load_base_address
@@ -37,7 +37,7 @@ Search the **FLAG** variable from the top of the stack, within a range of 0x1000
 s @esp L1000 00 00 40 00 00 00 d6 00
 ```
 
-- 4. Change it to zero
+- Change it to zero
 
 The **FLAG** variable is stored just next to the current image load base. so if the search result of previous step is *0x12345678*, then type:
 
