@@ -45,6 +45,6 @@ The **FLAG** variable is stored just next to the current image load base. so if 
 ed 0x12345678+8 0
 ```
 
-# A picture shows everything
+# One picture shows everything
 
 ![_config.yml]({{ site.baseurl }} /images/bypass_vmp.png)
