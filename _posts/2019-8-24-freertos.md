@@ -1,6 +1,6 @@
 ---
 layout: post
-title: notes about FreeRTOS
+title: Notes about FreeRTOS
 ---
 
 Take a note of FreeRTOS analysis
