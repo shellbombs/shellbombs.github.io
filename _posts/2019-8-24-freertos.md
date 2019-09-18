@@ -4,6 +4,7 @@ title: Notes about FreeRTOS
 ---
 
 Take a note of FreeRTOS analysis  
+
 **BOOT**
 1. .s file call main in main.c  
 2. main do os initialize & device initialize, create tasks, and call vTaskStartScheduler in tasks.c  
