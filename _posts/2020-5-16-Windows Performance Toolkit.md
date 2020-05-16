@@ -31,7 +31,7 @@ The performance data behind this graph come from the scheduler of the operating 
 
 **Ready**: Time spent in the ready state indicates that other threads are using CPUs, and prevent current thread from executing.
 
-**Waiting**: if a thread spends most of its time on this state, then we need figure out what it is waiting for, if it is waiting for another thread, then we must analyze time spent on each state for that thread, if that thread has significant running times, then we can use CPU Usage (Sampled) to figure out its hot functions and call stacks.
+**Waiting**: if a thread spends most of its time on this state, then we need figure out what it is waiting for, if it is waiting for another thread, then we must analyze time spent on each state for that thread, if that thread has significant running times, then we can use **CPU Usage (Sampled)** to figure out its hot functions and call stacks.
 
 The key point to resolve long delays of a program is to find out the critical path, because a program can have a lot of threads, some of them are parallel, optimizing them will not reduce the long delays, while some are sequential and are on the critical path, optimizing them can significantly improve the responsiveness of a program, nowadays programs are more and more complicated and many threads involved, it is usually not that easy to find out the critical path.
 
