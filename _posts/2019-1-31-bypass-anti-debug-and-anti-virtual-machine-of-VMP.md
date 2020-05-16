@@ -3,6 +3,7 @@ layout: post
 title: Bypass anti-debug and anti-vm of VMP
 ---
 
+Today i'm gonna show you how to bypass anti-debug and anti-vm of VMProtect(version before 3.2)
 # Overview
 
 VMP has used a lot of anti debug and anti virtual machine techniques which makes it really hard to debug programs protected by it. actually, VMP has stored a **DWORD FLAG**, which indicates whether it should detect user mode debugger, kernel mode debugger, virtual machine detection etc. so here I will show you how to locate the **FLAG** variable in memory and change it to bypass all kinds of anti-debug and vm-detection techniques.
