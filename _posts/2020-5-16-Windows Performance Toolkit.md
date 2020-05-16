@@ -33,10 +33,10 @@ The performance data behind this graph come from the scheduler of the operating 
 
 **Waiting**: if a thread spends most of its time on this state, then we need figure out what it is waiting for, if it is waiting for another thread, then we must analyze time spent on each state for that thread, if that thread has significant running times, then we can use CPU Usage (Sampled) to figure out its hot functions and call stacks.
 
-The key point to resolve long delays of a program is to find the critical path, because a program can have a lot of threads, some of them are parallel, optimizing them will not reduce the long delays, while some are sequential and are on the critical path, optimizing them can significantly improve the responsiveness of a program, nowadays programs are more and more complicated and many threads involved, it is usually not that easy to find the critical path.
+The key point to resolve long delays of a program is to find out the critical path, because a program can have a lot of threads, some of them are parallel, optimizing them will not reduce the long delays, while some are sequential and are on the critical path, optimizing them can significantly improve the responsiveness of a program, nowadays programs are more and more complicated and many threads involved, it is usually not that easy to find out the critical path.
 
 # Collect performance data
-Back to our topic, to collect performance data of git for windows, we use WPR, WPR can collect a lot of performance data, usually, we only enable necessary providers according to the problems we faced, here we pick First Level triage and Resource Analysis, if you scroll down the list, you can see some common scenarios, and pick them the WPR can automatically enable the necessary providers.
+Back to our topic, to collect performance data of git for windows, we use WPR, WPR can collect a lot of performance data, usually, we only enable necessary providers according to the problems we faced, here we pick First Level triage and CPU usage, if you scroll down the list, you can see some common scenarios, and pick them the WPR can automatically enable the necessary providers.
 
 ![_config.yml]({{ site.baseurl }} /images/wpr.png)
 
@@ -46,7 +46,7 @@ Click the start button, the WPR starts to collect performance data of the whole 
 Because WPR collected performance data of the whole system, we need to filter to a specific process to analyze, there are three processes related to git bash, we use Process Explorer to observe the whole process, when we right-click "Git Bash Here", the explorer.exe creates git-bash.exe, git-bash.exe creates mintty.exe, then mintty.exe creates bash.exe, this bash.exe then creates child bash.exe multiple times, some of the child bash.exe even creates several their child bash.exe. a few seconds later, all the bash.exe exits, only the first bash.exe left, at this time, finally I can type commands, so the problem is most likely related to the first bash.exe.
 
 ## Bash.exe analysis
-I observed that the CPU usage of the several bash.exe is not high, and the load average of the whole system is also not high, so probably the bash.exe is waiting for something, so we use CPU Usage (Precise) graph to do analysis. Drag the CPU Usage (Precise) graph to the right panel, Right-click on bash.exe then select "Filter To Selection", click on **Waits (us) Sum** to sort the threads, then analyze the call stacks of these threads, one call stack catches my attention
+I observed that the CPU usage of the several bash.exe is not high, and the load average of the whole system is also not high, so probably the bash.exe is waiting for something, we use **CPU Usage (Precise)** graph to do analysis. drag the **CPU Usage (Precise)** graph to the right panel, Right-click on bash.exe then select "Filter To Selection", click on **Waits (us) Sum** to sort the threads, then analyze the call stacks of these threads, one call stack catches my attention
 
 ![_config.yml]({{ site.baseurl }} /images/wpa_wait.png)
 
