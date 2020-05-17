@@ -19,7 +19,7 @@ WPA user interface as below, it can be used to analyze different performance pro
 
 ![_config.yml]({{ site.baseurl }} /images/wpa.png)
 
-on the left of the panel, there are different performance graphs, the performance data behind different graphs come from different kernel providers, you can drag the graphs to the right panel to do analysis. on the top right of the panel is the timeline, you can select a time interval and zoom to see things happened only in that time period, the most commonly used graphs are CPU Usage (Sampled) and CPU Usage (Precise)
+on the left of the panel, there are different performance graphs, the performance data behind different graphs come from different kernel providers, you can drag the graphs to the right panel to do analysis. on the top right of the panel is the timeline, you can select a time interval and zoom to see things happened only in that time period, the most commonly used graphs are **CPU Usage (Sampled)** and **CPU Usage (Precise)**
 
 ## CPU Usage (Sampled)
 The performance data behind this graph come from timer interrupts, samples of CPU activity are taken at a regular sampling interval, so this graph is very useful to analyze high CPU usage related problems, to find hot functions and call stacks
