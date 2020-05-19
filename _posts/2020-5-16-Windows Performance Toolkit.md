@@ -13,7 +13,7 @@ The Windows Performance Toolkit is the most powerful performance analysis tool p
 
 ![_config.yml]({{ site.baseurl }} /images/wpa_flame.png)
 
-WPR is based on ETW (Event Trace for Windows), different windows kernel components register themselves as kernel providers,  when the provider is enabled, the corresponding kernel component will write performance data into the kernel ring buffers, then the consumers are able to read them from the ring buffers, when providers are disabled, they have no cost to the system, just like Ftrace in Linux
+WPR is based on ETW (Event Trace for Windows), different windows kernel components register themselves as kernel providers,  when the provider is enabled, the corresponding kernel component will write performance data into the kernel ring buffers, then the consumers are able to read them from the ring buffers, when providers are disabled, they have no cost to the system, just like Tracepoint in Linux
 
 WPA user interface as below, it can be used to analyze different performance problems, like CPU usage, Memory leak, Interrupt, Storage, etc.
 
