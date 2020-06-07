@@ -49,6 +49,7 @@ because linux kernel has many different configs written in **Kconfig** files whi
     make clean
     ```
 - tell vscode the location of **compile_commands.json** file
+
     edit your .vscode/c_cpp_properties.json
     ![_config.yml]({{ site.baseurl }}/images/vscode_plugin_config.png)
 
