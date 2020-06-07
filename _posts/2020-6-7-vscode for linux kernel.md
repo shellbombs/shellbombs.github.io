@@ -12,6 +12,7 @@ I have used VIM + Ctags + CScope to navigate linux kernel source code for quite 
 **Example1:**
 
 if you are currently working on file **drivers/net/ethernet/intel/e1000/e1000_main.c**, and you type "ctrl + ]" on function **e1000_probe** to find definition, you may get a list like this:
+
 ![_config.yml]({{ site.baseurl }}/images/e1000_probe.png)
 
 because both driver **e1000** and **e1000e** have a function named **e1000_probe**, and this is quite common in linux kernel, many user defined functions have the same name in different drivers.
@@ -19,6 +20,7 @@ because both driver **e1000** and **e1000e** have a function named **e1000_probe
 **Example2:**
 
 you want to find definition of **mutex** structure, if you type "ctrl + ]" you will get a list with more then 400 options:
+
 ![_config.yml]({{ site.baseurl }}/images/mutex_definition.png)
     
 It's a pain to find **mutex** definition from these 455 options, of course you can type **cs f g struct mutex {** to find the correct one, but it's not that convenient to type so many words and it's a bit slow.
@@ -28,6 +30,7 @@ It's a pain to find **mutex** definition from these 455 options, of course you c
 2. install MS C/C++ IntelliSense plugin
 3. config MS C/C++ IntelliSense plugin
 because linux kernel has many different configs written in **Kconfig** files which affect function definitions, you should tell vscode the **includePath** and **defines**, luckly this can be done through **compile_commands.json** file:
+
 ![_config.yml]({{ site.baseurl }}/images/compile_commands.png)
 
 - get **compile_commands.json**
@@ -51,6 +54,7 @@ because linux kernel has many different configs written in **Kconfig** files whi
 - tell vscode the location of **compile_commands.json** file
 
     edit your .vscode/c_cpp_properties.json
+
     ![_config.yml]({{ site.baseurl }}/images/vscode_plugin_config.png)
 
 4. enjoy!
