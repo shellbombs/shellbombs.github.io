@@ -29,7 +29,8 @@ It's a pain to find **mutex** definition from these 455 options, of course you c
 1. install vscode on your linux machine
 2. install MS C/C++ IntelliSense plugin
 3. config MS C/C++ IntelliSense plugin
-because linux kernel has many different configs written in **Kconfig** files which affect function definitions, you should tell vscode the **includePath** and **defines**, luckly this can be done through **compile_commands.json** file:
+
+because linux kernel has many different configs written in **Kconfig** files which affect function definitions, you should tell plugin the **includePath** and **defines**, luckly this can be done through **compile_commands.json** file:
 
 ![_config.yml]({{ site.baseurl }}/images/compile_commands.png)
 
@@ -51,13 +52,11 @@ because linux kernel has many different configs written in **Kconfig** files whi
     ```shell
     make clean
     ```
-- tell vscode the location of **compile_commands.json** file
+- tell MS C/C++ IntelliSense plugin the location of **compile_commands.json** file
 
     edit your .vscode/c_cpp_properties.json
 
     ![_config.yml]({{ site.baseurl }}/images/vscode_plugin_config.png)
-
-4. enjoy!
 
 # References
 [https://code.visualstudio.com/docs/cpp/config-linux](https://code.visualstudio.com/docs/cpp/config-linux "vscode config for linux")
