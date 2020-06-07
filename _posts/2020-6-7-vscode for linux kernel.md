@@ -3,6 +3,8 @@ layout: post
 title: vscode for linux kernel
 ---
 
+VSCode VS VIM + Ctags + Cscope!
+
 # Background
 I have used VIM + Ctags + CScope to navigate linux kernel source code for quite a long time, I can only say it's usable but not perfect, the disadvantages are as follows:
 
@@ -24,6 +26,8 @@ you want to find definition of **mutex** structure, if you type "ctrl + ]" you w
 ![_config.yml]({{ site.baseurl }}/images/mutex_definition.png)
     
 It's a pain to find **mutex** definition from these 455 options, of course you can type **cs f g struct mutex {** to find the correct one, but it's not that convenient to type so many words and it's a bit slow.
+
+Now vscode provides a better experience compared to VIM + Ctags + Cscope
 
 # vscode for linux kernel
 1. install vscode on your linux machine
