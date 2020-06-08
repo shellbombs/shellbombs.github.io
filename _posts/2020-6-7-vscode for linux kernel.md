@@ -21,7 +21,7 @@ because both driver **e1000** and **e1000e** have a function named **e1000_probe
 
 **Example2:**
 
-you want to find definition of **mutex** structure, if you type "ctrl + ]" you will get a list with more then 400 options:
+you want to find definition of **mutex** structure, if you type "ctrl + ]" you will get a list with more than 400 options:
 
 ![_config.yml]({{ site.baseurl }}/images/mutex_definition.png)
     
