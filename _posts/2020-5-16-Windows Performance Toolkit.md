@@ -52,7 +52,7 @@ I observed that the CPU usage of the several bash.exe is not high, and the load 
 
 we can see, the bash.exe calls CreateProcess, in the kernel, MiCreateSection is called, then xxx.sys calls FltSendMessage to send a message and waits, FltSendMessage/FilterReplayMessage is the infrastructure provided by Microsoft for minifilter, drivers can call FltSendMessage to send messages to user applications, and user applications use FilterGetMessage to get messages and FilterReplyMessage to reply to the drivers, and last FltSendMessage return. we can see the whole process costs **3.6 seconds**, the bash.exe creates several child bash.exe, the total time cost is **3.6 seconds**
 
-The powerful part is, not only can WPA tell you what the thread is waiting for, but also it can tell you which thread wakes it.
+The powerful part is, not only can WPA tell you what the thread is waiting for, but also it can tell you which thread wakes it up.
 
 ![_config.yml]({{ site.baseurl }} /images/wpa_ready.png)
 
