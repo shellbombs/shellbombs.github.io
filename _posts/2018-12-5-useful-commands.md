@@ -19,6 +19,11 @@ because windows performance toolkit are not avaliable on win7, we can use *Xperf
 ```
 xperf -start -on base -stackwalk profile
 ```
+then, we must use -merge subcommand to add image identification information and event manifest information that is required for safe symbol decoding.
+```
+xperf -merge kernel.etl merged.etl
+```
+after this, we can use WPA to analyze file merged.etl on another computer.
 
 avaliable *-on* groups:
 Base           : PROC_THREAD+LOADER+DISK_IO+HARD_FAULTS+PROFILE+MEMINFO+MEMINFO_WS
