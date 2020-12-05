@@ -5,7 +5,7 @@ title: Useful commands
 
 Take a note of some useful commands that are hard to remember!
 
-#Windbg
+# Windbg
 
 ```
 bp kernel32!CreateFileW "as /mu ${/v:filename} poi(@esp+4); .block {.if ($spat(@\"${filename}\", \"*.txt\")) {ad /q *; kb;} .else {ad /q *; gc;}}"
@@ -13,7 +13,7 @@ bp kernel32!CreateFileW "as /mu ${/v:filename} poi(@esp+4); .block {.if ($spat(@
 
 break into debugger when the process opens or creates a file with a *.txt* file extension.
 
-#Xperf
+# Xperf
 
 because windows performance toolkit are not avaliable on win7, we can use *Xperf* instead.
 ```
@@ -26,6 +26,7 @@ xperf -merge kernel.etl merged.etl
 after this, we can use WPA to analyze file *merged.etl* on another computer.
 
 avaliable *-on* groups:
+
 Base           : PROC_THREAD+LOADER+DISK_IO+HARD_FAULTS+PROFILE+MEMINFO+MEMINFO_WS
 Diag           : PROC_THREAD+LOADER+DISK_IO+HARD_FAULTS+DPC+INTERRUPT+CSWITCH+PERF_COUNTER+COMPACT_CSWITCH
 DiagEasy       : PROC_THREAD+LOADER+DISK_IO+HARD_FAULTS+DPC+INTERRUPT+CSWITCH+PERF_COUNTER
@@ -39,6 +40,7 @@ ReferenceSet   : PROC_THREAD+LOADER+HARD_FAULTS+MEMORY+FOOTPRINT+VIRT_ALLOC+MEMI
 Network        : PROC_THREAD+LOADER+NETWORKTRACE
 
 avaliable *-stackwalk* flags:
+
 AlpcClosePort
 AlpcConnectFail
 AlpcConnectRequest
