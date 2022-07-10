@@ -6,6 +6,7 @@ title: Linux Perf
 Take a note of linux perf tool, more details will be added.
 
 # usermode part
+
 tools/perf/builtin-record.c 
 ---------------------------------
 ```
@@ -24,6 +25,7 @@ tools/lib/perf/evsel.c
 ```
 
 # kernelmode part
+
 kernel/events/core.c
 --------------------------------
 ```
@@ -35,6 +37,7 @@ kernel/events/core.c
 ```
 
 # pmu register
+
 kernel/events/core.c
 --------------------------------
 ```
@@ -58,6 +61,7 @@ static inline void perf_tp_register(void)
 ```
 
 # take tracepoint as example
+
 kernel/events/core.c
 --------------------------------
 ```
