@@ -93,4 +93,4 @@ kernel/trace/trace_event_perf.c
 ```
 tp_event is a **trace_event_call** structure which is defined when we use the **very complicated macro TRACE_EVENT** for specific tracepoint, all **trace_event_call** structures will be linked to a global list **ftrace_events**.
 
-for tracepoint, the **tp_event->class->reg** will be **trace_event_reg**, it will register the perf_event callback **trace_event_raw_event_##call** to the specific tracepoint, the callback **trace_event_raw_event_##call** which is also define by the **very complicated macro TRACE_EVENT**, will write collected data to the ring buffer
+for tracepoint, the **tp_event->class->reg** will be **trace_event_reg**, it will register the perf_event callback **perf_trace_##call** to the specific tracepoint, the callback **perf_trace_##call** which is also define by the **very complicated macro TRACE_EVENT**, will write collected data to the ring buffer
