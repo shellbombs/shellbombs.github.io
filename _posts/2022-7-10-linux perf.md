@@ -16,7 +16,7 @@ tools/perf/builtin-record.c
 |   |  |   \-- evsel__open
 ```
 
-tools/lib/perf/evsel.c
+tools/perf/util/evsel.c
 ---------------------------------
 ```
 \-- evsel__open
