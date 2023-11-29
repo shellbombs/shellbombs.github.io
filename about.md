@@ -4,7 +4,8 @@ title: About
 permalink: /about/
 ---
 
-windows and linux kernel development, excellent in kernel driver and debugging, familiar with binary reverse, vulnerability and malware analysis.
+C/C++ Programmer.
+Good at windows/linux kernel development, performance analysis, debug, binary reverse.
 
 ### Contact me
 
